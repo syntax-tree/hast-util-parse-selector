@@ -1,0 +1,17 @@
+{
+  "name": "hast-util-parse-selector",
+  "version": "0.0.0",
+  "description": "HAST to virtual dom",
+  "license": "MIT",
+  "keywords": [
+    "hast",
+    "rehype",
+    "vdom",
+    "html"
+  ],
+  "repository": "wooorm/hast-util-parse-selector",
+  "dependencies": {},
+  "scripts": [
+    "index.js"
+  ]
+}

@@ -1,0 +1,7 @@
+.DS_Store
+*.log
+components/
+coverage/
+node_modules/
+hast-util-parse-selector.js
+hast-util-parse-selector.min.js
