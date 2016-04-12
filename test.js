@@ -97,5 +97,16 @@ test('parseSelector()', function (t) {
         'should return the last ID if multiple are found'
     );
 
+    t.deepEqual(
+        parseSelector('Foo'),
+        {
+            'type': 'element',
+            'tagName': 'Foo',
+            'properties': {},
+            'children': []
+        },
+        'should *not* case the tag-name'
+    );
+
     t.end();
 });

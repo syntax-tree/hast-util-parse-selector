@@ -78,7 +78,7 @@ function parse(selector) {
         }
     }
 
-    node.tagName = name.toLowerCase();
+    node.tagName = name;
 
     if (id) {
         node.properties.id = id;
