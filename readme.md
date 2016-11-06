@@ -4,14 +4,11 @@ Parse a simple CSS selector to a HAST node.
 
 ## Installation
 
-[npm][npm-install]:
+[npm][]:
 
 ```bash
 npm install hast-util-parse-selector
 ```
-
-**hast-util-parse-selector** is also available as an AMD, CommonJS, and globals
-module, [uncompressed and compressed][releases].
 
 ## Usage
 
@@ -36,12 +33,15 @@ Yields:
 
 Parse a CSS `selector` to a [HAST][] [node][hast-node].
 
-**selector** (`string`, optional).  Can contain a tag-name (`foo`),
-classes (`.bar`), and an ID (`#baz`).
-Multiple classes are allowed.  Uses the last ID if multiple IDs are
-found.
+###### `selector`
 
-**Returns**: [`Node`][hast-node] — A HAST node.
+`string`, optional — Can contain a tag-name (`foo`), classes (`.bar`),
+and an ID (`#baz`).  Multiple classes are allowed.  Uses the last ID if
+multiple IDs are found.
+
+###### Returns
+
+[`Node`][hast-node].
 
 ## License
 
@@ -57,9 +57,7 @@ found.
 
 [codecov]: https://codecov.io/github/wooorm/hast-util-parse-selector
 
-[npm-install]: https://docs.npmjs.com/cli/install
-
-[releases]: https://github.com/wooorm/hast-util-parse-selector/releases
+[npm]: https://docs.npmjs.com/cli/install
 
 [license]: LICENSE
 
