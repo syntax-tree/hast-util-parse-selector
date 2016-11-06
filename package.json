@@ -11,17 +11,14 @@
     "css",
     "html"
   ],
-  "files": [
-    "index.js"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wooorm/hast-util-parse-selector.git"
-  },
+  "repository": "https://github.com/wooorm/hast-util-parse-selector",
   "bugs": "https://github.com/wooorm/hast-util-parse-selector/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
   "contributors": [
     "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
+  ],
+  "files": [
+    "index.js"
   ],
   "dependencies": {},
   "devDependencies": {
