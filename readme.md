@@ -1,6 +1,6 @@
 # hast-util-parse-selector [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
 
-Parse a simple CSS selector to a HAST node.
+Parse a simple CSS selector to a [HAST][] node.
 
 ## Installation
 
@@ -31,7 +31,7 @@ Yields:
 
 ### `parseSelector([selector])`
 
-Parse a CSS `selector` to a [HAST][] [node][hast-node].
+Parse a CSS `selector` to a [HAST][] node.
 
 ###### `selector`
 
@@ -41,7 +41,7 @@ multiple IDs are found.
 
 ###### Returns
 
-[`Node`][hast-node].
+[`Node`][hast].
 
 ## License
 
@@ -64,5 +64,3 @@ multiple IDs are found.
 [author]: http://wooorm.com
 
 [hast]: https://github.com/wooorm/hast
-
-[hast-node]: https://github.com/wooorm/hast#node
