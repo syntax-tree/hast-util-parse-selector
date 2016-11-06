@@ -15,34 +15,19 @@ module, [uncompressed and compressed][releases].
 
 ## Usage
 
-Dependencies:
-
 ```javascript
 var parseSelector = require('hast-util-parse-selector');
-```
 
-Parse:
-
-```javascript
-var node = parseSelector('.quux#bar.baz.qux');
+console.log(parseSelector('.quux#bar.baz.qux'));
 ```
 
 Yields:
 
-```json
-{
-  "type": "element",
-  "tagName": "div",
-  "properties": {
-    "id": "bar",
-    "className": [
-      "quux",
-      "baz",
-      "qux"
-    ]
-  },
-  "children": []
-}
+```js
+{ type: 'element',
+  tagName: 'div',
+  properties: { id: 'bar', className: [ 'quux', 'baz', 'qux' ] },
+  children: [] }
 ```
 
 ## API
