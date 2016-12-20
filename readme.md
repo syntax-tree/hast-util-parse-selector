@@ -49,13 +49,13 @@ multiple IDs are found.
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/wooorm/hast-util-parse-selector.svg
+[travis-badge]: https://img.shields.io/travis/syntax-tree/hast-util-parse-selector.svg
 
-[travis]: https://travis-ci.org/wooorm/hast-util-parse-selector
+[travis]: https://travis-ci.org/syntax-tree/hast-util-parse-selector
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/wooorm/hast-util-parse-selector.svg
+[codecov-badge]: https://img.shields.io/codecov/c/github/syntax-tree/hast-util-parse-selector.svg
 
-[codecov]: https://codecov.io/github/wooorm/hast-util-parse-selector
+[codecov]: https://codecov.io/github/syntax-tree/hast-util-parse-selector
 
 [npm]: https://docs.npmjs.com/cli/install
 
@@ -63,4 +63,4 @@ multiple IDs are found.
 
 [author]: http://wooorm.com
 
-[hast]: https://github.com/wooorm/hast
+[hast]: https://github.com/syntax-tree/hast
