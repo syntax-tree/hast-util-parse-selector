@@ -18,7 +18,7 @@ function parse(selector) {
     children: []
   };
 
-  selector = selector || ''
+  selector = selector || '';
 
   while (index <= selector.length) {
     var ch = selector[index++];
@@ -41,7 +41,7 @@ function parse(selector) {
     }
   }
 
-  if (className.length) {
+  if (className.length) { // eslint-disable-line unicorn/explicit-length-check
     node.properties.className = className;
   }
 
