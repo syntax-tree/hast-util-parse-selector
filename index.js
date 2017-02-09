@@ -3,61 +3,45 @@
 /* Expose. */
 module.exports = parse;
 
-/* Characters */
-var dot = '.'.charCodeAt(0);
-var hash = '#'.charCodeAt(0);
-
 /* Parse a simple CSS selector into a HAST node. */
 function parse(selector) {
-  var id = null;
+  var index = 0;
   var className = [];
-  var value = selector || '';
-  var name = 'div';
-  var node;
-  var type = null;
-  var index = -1;
-  var code;
-  var length = value.length;
-  var subvalue;
+
+  var type;
   var lastIndex;
 
-  node = {
+  var node = {
     type: 'element',
-    tagName: null,
+    tagName: 'div',
     properties: {},
     children: []
   };
 
-  type = null;
+  selector = selector || ''
 
-  while (++index <= length) {
-    code = value.charCodeAt(index);
+  while (index <= selector.length) {
+    var ch = selector[index++];
 
-    if (!code || code === dot || code === hash) {
-      subvalue = value.slice(lastIndex, index);
+    if (!ch || ch === '.' || ch === '#') {
+      var subvalue = selector.slice(lastIndex, index - 1);
 
       if (subvalue) {
-        if (type === dot) {
+        if (type === '.') {
           className.push(subvalue);
-        } else if (type === hash) {
-          id = subvalue;
+        } else if (type === '#') {
+          node.properties.id = subvalue;
         } else {
-          name = subvalue;
+          node.tagName = subvalue;
         }
       }
 
-      lastIndex = index + 1;
-      type = code;
+      lastIndex = index;
+      type = ch;
     }
   }
 
-  node.tagName = name;
-
-  if (id) {
-    node.properties.id = id;
-  }
-
-  if (className.length !== 0) {
+  if (className.length) {
     node.properties.className = className;
   }
 
