@@ -42,6 +42,9 @@
   },
   "xo": {
     "space": true,
+    "rules": {
+      "max-depth": "off"
+    },
     "ignores": [
       "hast-util-parse-selector.js"
     ]
