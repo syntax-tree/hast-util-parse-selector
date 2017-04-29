@@ -31,7 +31,8 @@ function parse(selector) {
           if (className) {
             className.push(subvalue);
           } else {
-            className = props.className = [subvalue];
+            className = [subvalue];
+            props.className = className;
           }
         } else if (type === hash) {
           props.id = subvalue;
