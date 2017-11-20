@@ -11,7 +11,7 @@
     "css",
     "html"
   ],
-  "repository": "https://github.com/syntax-tree/hast-util-parse-selector",
+  "repository": "syntax-tree/hast-util-parse-selector",
   "bugs": "https://github.com/syntax-tree/hast-util-parse-selector/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
   "contributors": [
