@@ -1,9 +1,7 @@
 'use strict';
 
-/* Expose. */
 module.exports = parse;
 
-/* Characters */
 var dot = '.'.charCodeAt(0);
 var hash = '#'.charCodeAt(0);
 

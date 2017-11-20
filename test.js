@@ -1,10 +1,8 @@
 'use strict';
 
-/* Dependencies. */
 var test = require('tape');
 var parseSelector = require('./index.js');
 
-/* Tests. */
 test('parseSelector()', function (t) {
   t.deepEqual(
     parseSelector(),
