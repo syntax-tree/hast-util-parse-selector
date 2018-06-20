@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
-var test = require('tape');
-var parseSelector = require('.');
+var test = require('tape')
+var parseSelector = require('.')
 
-test('parseSelector()', function (t) {
+test('parseSelector()', function(t) {
   t.deepEqual(
     parseSelector(),
     {
@@ -13,7 +13,7 @@ test('parseSelector()', function (t) {
       children: []
     },
     'should return an empty element without selector'
-  );
+  )
 
   t.deepEqual(
     parseSelector('foo'),
@@ -24,7 +24,7 @@ test('parseSelector()', function (t) {
       children: []
     },
     'should return an element with a tag-name when given a tag-name'
-  );
+  )
 
   t.deepEqual(
     parseSelector('.bar'),
@@ -35,7 +35,7 @@ test('parseSelector()', function (t) {
       children: []
     },
     'should return a `div` element when given a class'
-  );
+  )
 
   t.deepEqual(
     parseSelector('#bar'),
@@ -46,7 +46,7 @@ test('parseSelector()', function (t) {
       children: []
     },
     'should return a `div` element when given an ID'
-  );
+  )
 
   t.deepEqual(
     parseSelector('foo#bar.baz.qux'),
@@ -60,7 +60,7 @@ test('parseSelector()', function (t) {
       children: []
     },
     'should return attributes'
-  );
+  )
 
   t.deepEqual(
     parseSelector('foo#bar#baz'),
@@ -71,7 +71,7 @@ test('parseSelector()', function (t) {
       children: []
     },
     'should return the last ID if multiple are found'
-  );
+  )
 
   t.deepEqual(
     parseSelector('Foo'),
@@ -82,7 +82,7 @@ test('parseSelector()', function (t) {
       children: []
     },
     'should *not* case the tag-name'
-  );
+  )
 
-  t.end();
-});
+  t.end()
+})

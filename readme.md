@@ -13,9 +13,9 @@ npm install hast-util-parse-selector
 ## Usage
 
 ```javascript
-var parseSelector = require('hast-util-parse-selector');
+var parseSelector = require('hast-util-parse-selector')
 
-console.log(parseSelector('.quux#bar.baz.qux'));
+console.log(parseSelector('.quux#bar.baz.qux'))
 ```
 
 Yields:
