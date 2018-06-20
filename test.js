@@ -1,7 +1,7 @@
 'use strict';
 
 var test = require('tape');
-var parseSelector = require('./index.js');
+var parseSelector = require('.');
 
 test('parseSelector()', function (t) {
   t.deepEqual(
