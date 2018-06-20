@@ -5,3 +5,4 @@ coverage/
 node_modules/
 hast-util-parse-selector.js
 hast-util-parse-selector.min.js
+yarn.lock
