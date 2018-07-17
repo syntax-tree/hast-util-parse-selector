@@ -6,9 +6,9 @@ var dot = '.'.charCodeAt(0)
 var hash = '#'.charCodeAt(0)
 
 /* Parse a simple CSS selector into a HAST node. */
-function parse(selector) {
+function parse(selector, defaultTagName) {
   var value = selector || ''
-  var name = 'div'
+  var name = defaultTagName || 'div'
   var props = {}
   var index = -1
   var length = value.length

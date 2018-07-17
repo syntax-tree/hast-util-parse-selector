@@ -29,7 +29,7 @@ Yields:
 
 ## API
 
-### `parseSelector([selector])`
+### `parseSelector([selector][, defaultTagName])`
 
 Parse a CSS `selector` to a [HAST][] node.
 
@@ -38,6 +38,11 @@ Parse a CSS `selector` to a [HAST][] node.
 `string`, optional — Can contain a tag-name (`foo`), classes (`.bar`),
 and an ID (`#baz`).  Multiple classes are allowed.  Uses the last ID if
 multiple IDs are found.
+
+###### `defaultTagName`
+
+`string`, optional, defaults to `div` — Tag name to use if `selector` does not
+specify one.
 
 ###### Returns
 

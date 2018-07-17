@@ -27,6 +27,28 @@ test('parseSelector()', function(t) {
   )
 
   t.deepEqual(
+    parseSelector(null, 'g'),
+    {
+      type: 'element',
+      tagName: 'g',
+      properties: {},
+      children: []
+    },
+    'should return an `defaultTagName` if no tag name is defined in `selector` (#1)'
+  )
+
+  t.deepEqual(
+    parseSelector('#id', 'g'),
+    {
+      type: 'element',
+      tagName: 'g',
+      properties: {id: 'id'},
+      children: []
+    },
+    'should return an `defaultTagName` if no tag name is defined in `selector` (#2)'
+  )
+
+  t.deepEqual(
     parseSelector('.bar'),
     {
       type: 'element',
