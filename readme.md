@@ -1,4 +1,9 @@
-# hast-util-parse-selector [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
+# hast-util-parse-selector
+
+[![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
+[![Downloads][downloads-badge]][downloads]
+[![Chat][chat-badge]][chat]
 
 Parse a simple CSS selector to a [HAST][] node.
 
@@ -62,13 +67,21 @@ repository, organisation, or community you agree to abide by its terms.
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/syntax-tree/hast-util-parse-selector.svg
+[build-badge]: https://img.shields.io/travis/syntax-tree/hast-util-parse-selector.svg
 
-[travis]: https://travis-ci.org/syntax-tree/hast-util-parse-selector
+[build]: https://travis-ci.org/syntax-tree/hast-util-parse-selector
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/syntax-tree/hast-util-parse-selector.svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/syntax-tree/hast-util-parse-selector.svg
 
-[codecov]: https://codecov.io/github/syntax-tree/hast-util-parse-selector
+[coverage]: https://codecov.io/github/syntax-tree/hast-util-parse-selector
+
+[downloads-badge]: https://img.shields.io/npm/dm/hast-util-parse-selector.svg
+
+[downloads]: https://www.npmjs.com/package/hast-util-parse-selector
+
+[chat-badge]: https://img.shields.io/badge/join%20the%20community-on%20spectrum-7b16ff.svg
+
+[chat]: https://spectrum.chat/unified/rehype
 
 [npm]: https://docs.npmjs.com/cli/install
 
