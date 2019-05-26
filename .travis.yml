@@ -1,7 +1,7 @@
 language: node_js
 node_js:
-- lts/boron
-- node
+  - lts/dubnium
+  - node
 after_script: bash <(curl -s https://codecov.io/bash)
 deploy:
   provider: releases
@@ -9,7 +9,7 @@ deploy:
   api_key:
     secure: OcG+XpUDudL30F6qdRlxGoNfYDCmIPURShOaE8eCdnPynkKFXq9c/2z11s4r6yrr7mb99TU9rhepPma8IbOS5XKPuozrXoHTY1OcLZ77wil8yI39cEme4fs0zbRAH4Y43P8vE9WKvwBqb1jXKRtbFnQ/kMho5mfBD+GM/xUR0LPs5tLmqrxtLFaddGnW0TJDokdrJqcXv4XZI0tp+PC4Cpjaf5TRx3ouY54F/CKTbaPjIzuNQyAp5W2WvF1UBZRVeSx32Kd6iJOgRnV4boznYn809R/dgLAI//Pn6RKRM/sSOORsr6nabaBpWOn1eI+h1nfMFXF40gXSaeg/igV8Iphvc0QsdqVGuuUWtImCn4ZD90spOIRPbgd+rli10gTgL87q9bxrpPSkjYPSnx8+Q9xk7FMDN2ei2z35Hxu0jGlLssFqjtoaLUOzdnUOtKsDI4JVsXu1CMzp7YO7t+TB1hKdCZCuONMRVim8m4lGcmCdvudkj+2ZUp1VVIbpEbrZYaBmbdrl50HTny78OnaMWjav3BcP3QsY4Br5cRAflk4gMtuHHbnAKKQVWZqjqV7DUvSFgCYeYDqNTnD0tOgwCck8tv8h7KoahPt0YN8W073ri9mEuobMMLnx8nVemNQy2jGj4i0gxtfgZoJStAS7w2tJo514f765Y2RE52pt4eA=
   file:
-    - "hast-util-parse-selector.js"
-    - "hast-util-parse-selector.min.js"
+    - 'hast-util-parse-selector.js'
+    - 'hast-util-parse-selector.min.js'
   on:
     tags: true
