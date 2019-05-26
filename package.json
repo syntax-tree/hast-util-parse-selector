@@ -32,7 +32,7 @@
     "xo": "^0.24.0"
   },
   "scripts": {
-    "format": "remark . -qfo && prettier --write '**/*.js' && xo --fix",
+    "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
     "build-bundle": "browserify . -s hastUtilParseSelector > hast-util-parse-selector.js",
     "build-mangle": "browserify . -s hastUtilParseSelector -p tinyify > hast-util-parse-selector.min.js",
     "build": "npm run build-bundle && npm run build-mangle",
