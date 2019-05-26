@@ -5,7 +5,7 @@ module.exports = parse
 var dot = '.'.charCodeAt(0)
 var hash = '#'.charCodeAt(0)
 
-/* Parse a simple CSS selector into a HAST node. */
+// Create a hast element from a simple CSS selector.
 function parse(selector, defaultTagName) {
   var value = selector || ''
   var name = defaultTagName || 'div'
@@ -26,6 +26,7 @@ function parse(selector, defaultTagName) {
 
       if (subvalue) {
         if (type === dot) {
+          // eslint-disable-next-line max-depth
           if (className) {
             className.push(subvalue)
           } else {

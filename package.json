@@ -51,9 +51,6 @@
   "xo": {
     "prettier": true,
     "esnext": false,
-    "rules": {
-      "max-depth": "off"
-    },
     "ignores": [
       "hast-util-parse-selector.js"
     ]
