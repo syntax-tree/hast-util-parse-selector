@@ -3,21 +3,25 @@
 [![Build][build-badge]][build]
 [![Coverage][coverage-badge]][coverage]
 [![Downloads][downloads-badge]][downloads]
+[![Size][size-badge]][size]
+[![Sponsors][sponsors-badge]][collective]
+[![Backers][backers-badge]][collective]
 [![Chat][chat-badge]][chat]
 
-Parse a simple CSS selector to a [HAST][] node.
+[**hast**][hast] utility to create an [*element*][element] from a simple CSS
+selector.
 
-## Installation
+## Install
 
 [npm][]:
 
-```bash
+```sh
 npm install hast-util-parse-selector
 ```
 
 ## Usage
 
-```javascript
+```js
 var parseSelector = require('hast-util-parse-selector')
 
 console.log(parseSelector('.quux#bar.baz.qux'))
@@ -36,13 +40,14 @@ Yields:
 
 ### `parseSelector([selector][, defaultTagName])`
 
-Parse a CSS `selector` to a [HAST][] node.
+Create an [*element*][element] [*node*][node] from a simple CSS selector.
 
 ###### `selector`
 
 `string`, optional — Can contain a tag-name (`foo`), classes (`.bar`),
-and an ID (`#baz`).  Multiple classes are allowed.  Uses the last ID if
-multiple IDs are found.
+and an ID (`#baz`).
+Multiple classes are allowed.
+Uses the last ID if multiple IDs are found.
 
 ###### `defaultTagName`
 
@@ -51,15 +56,17 @@ specify one.
 
 ###### Returns
 
-[`Node`][hast].
+[`Element`][element].
 
 ## Contribute
 
-See [`contributing.md` in `syntax-tree/hast`][contributing] for ways to get
+See [`contributing.md` in `syntax-tree/.github`][contributing] for ways to get
 started.
+See [`support.md`][support] for ways to get help.
 
-This organisation has a [Code of Conduct][coc].  By interacting with this
-repository, organisation, or community you agree to abide by its terms.
+This project has a [Code of Conduct][coc].
+By interacting with this repository, organisation, or community you agree to
+abide by its terms.
 
 ## License
 
@@ -79,9 +86,19 @@ repository, organisation, or community you agree to abide by its terms.
 
 [downloads]: https://www.npmjs.com/package/hast-util-parse-selector
 
+[size-badge]: https://img.shields.io/bundlephobia/minzip/hast-util-parse-selector.svg
+
+[size]: https://bundlephobia.com/result?p=hast-util-parse-selector
+
+[sponsors-badge]: https://opencollective.com/unified/sponsors/badge.svg
+
+[backers-badge]: https://opencollective.com/unified/backers/badge.svg
+
+[collective]: https://opencollective.com/unified
+
 [chat-badge]: https://img.shields.io/badge/join%20the%20community-on%20spectrum-7b16ff.svg
 
-[chat]: https://spectrum.chat/unified/rehype
+[chat]: https://spectrum.chat/unified/syntax-tree
 
 [npm]: https://docs.npmjs.com/cli/install
 
@@ -89,8 +106,14 @@ repository, organisation, or community you agree to abide by its terms.
 
 [author]: https://wooorm.com
 
+[contributing]: https://github.com/syntax-tree/.github/blob/master/contributing.md
+
+[support]: https://github.com/syntax-tree/.github/blob/master/support.md
+
+[coc]: https://github.com/syntax-tree/.github/blob/master/code-of-conduct.md
+
 [hast]: https://github.com/syntax-tree/hast
 
-[contributing]: https://github.com/syntax-tree/hast/blob/master/contributing.md
+[node]: https://github.com/syntax-tree/hast#nodes
 
-[coc]: https://github.com/syntax-tree/hast/blob/master/code-of-conduct.md
+[element]: https://github.com/syntax-tree/hast#element
