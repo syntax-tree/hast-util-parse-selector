@@ -2,8 +2,8 @@
 
 module.exports = parse
 
-var dot = '.'.charCodeAt(0)
-var hash = '#'.charCodeAt(0)
+var numberSign = 35 //  '#'
+var dot = 46 //  '.'
 
 // Create a hast element from a simple CSS selector.
 function parse(selector, defaultTagName) {
@@ -21,7 +21,7 @@ function parse(selector, defaultTagName) {
   while (++index <= length) {
     code = value.charCodeAt(index)
 
-    if (!code || code === dot || code === hash) {
+    if (!code || code === dot || code === numberSign) {
       subvalue = value.slice(lastIndex, index)
 
       if (subvalue) {
@@ -33,7 +33,7 @@ function parse(selector, defaultTagName) {
             className = [subvalue]
             props.className = className
           }
-        } else if (type === hash) {
+        } else if (type === numberSign) {
           props.id = subvalue
         } else {
           name = subvalue
