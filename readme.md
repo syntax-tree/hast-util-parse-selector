@@ -58,6 +58,14 @@ specify one.
 
 [`Element`][element].
 
+## Security
+
+Improper use of the `selector` or `defaultTagName` can open you up to a
+[cross-site scripting (XSS)][xss] attack as the value of `tagName`, when
+resolving to `script`, injects a `script` element into the syntax tree.
+
+Do not use user input in `selector` or use [`hast-util-santize`][sanitize].
+
 ## Contribute
 
 See [`contributing.md` in `syntax-tree/.github`][contributing] for ways to get
@@ -117,3 +125,7 @@ abide by its terms.
 [node]: https://github.com/syntax-tree/hast#nodes
 
 [element]: https://github.com/syntax-tree/hast#element
+
+[xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
+
+[sanitize]: https://github.com/syntax-tree/hast-util-sanitize
