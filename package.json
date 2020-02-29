@@ -1,15 +1,18 @@
 {
   "name": "hast-util-parse-selector",
   "version": "2.2.3",
-  "description": "Parse a simple CSS selector to a HAST node",
+  "description": "hast utility to create an element from a simple CSS selector",
   "license": "MIT",
   "keywords": [
+    "unist",
     "hast",
-    "rehype",
-    "selector",
-    "parse",
+    "hast-util",
+    "util",
+    "utility",
+    "html",
     "css",
-    "html"
+    "selector",
+    "parse"
   ],
   "repository": "syntax-tree/hast-util-parse-selector",
   "bugs": "https://github.com/syntax-tree/hast-util-parse-selector/issues",
