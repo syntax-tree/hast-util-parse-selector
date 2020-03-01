@@ -66,6 +66,11 @@ resolving to `script`, injects a `script` element into the syntax tree.
 
 Do not use user input in `selector` or use [`hast-util-santize`][sanitize].
 
+## Related
+
+*   [`hast-util-from-selector`](https://github.com/syntax-tree/hast-util-from-selector)
+    — parse complex CSS selectors to nodes
+
 ## Contribute
 
 See [`contributing.md` in `syntax-tree/.github`][contributing] for ways to get
