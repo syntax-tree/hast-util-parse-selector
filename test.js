@@ -3,7 +3,7 @@
 var test = require('tape')
 var parseSelector = require('.')
 
-test('parseSelector()', function(t) {
+test('parseSelector()', function (t) {
   t.deepEqual(
     parseSelector(),
     {
