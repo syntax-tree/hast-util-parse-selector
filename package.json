@@ -1,6 +1,6 @@
 {
   "name": "hast-util-parse-selector",
-  "version": "2.2.4",
+  "version": "2.2.5",
   "description": "hast utility to create an element from a simple CSS selector",
   "license": "MIT",
   "keywords": [
