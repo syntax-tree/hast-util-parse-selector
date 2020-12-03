@@ -87,9 +87,9 @@ abide by its terms.
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/syntax-tree/hast-util-parse-selector.svg
+[build-badge]: https://github.com/syntax-tree/hast-util-parse-selector/workflows/main/badge.svg
 
-[build]: https://travis-ci.org/syntax-tree/hast-util-parse-selector
+[build]: https://github.com/syntax-tree/hast-util-parse-selector/actions
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/syntax-tree/hast-util-parse-selector.svg
 
