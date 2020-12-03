@@ -36,12 +36,12 @@
     "remark-preset-wooorm": "^8.0.0",
     "tape": "^5.0.0",
     "tinyify": "^3.0.0",
-    "xo": "^0.34.0"
+    "xo": "^0.35.0"
   },
   "scripts": {
     "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
-    "build-bundle": "browserify . -s hastUtilParseSelector > hast-util-parse-selector.js",
-    "build-mangle": "browserify . -s hastUtilParseSelector -p tinyify > hast-util-parse-selector.min.js",
+    "build-bundle": "browserify . -s hastUtilParseSelector -o hast-util-parse-selector.js",
+    "build-mangle": "browserify . -s hastUtilParseSelector -o hast-util-parse-selector.min.js -p tinyify",
     "build": "npm run build-bundle && npm run build-mangle",
     "test-api": "node test",
     "test-coverage": "nyc --reporter lcov tape test.js",
