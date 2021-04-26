@@ -1,12 +1,27 @@
+/**
+ * @typedef {import('hast').Properties} Properties
+ * @typedef {import('hast').Element} Element
+ */
+
 var search = /[#.]/g
 
-// Create a hast element from a simple CSS selector.
+/**
+ * Create a hast element from a simple CSS selector.
+ *
+ * @param {string} [selector]
+ * @param {string} [name='div']
+ * @returns {Element}
+ */
 export function parseSelector(selector, name = 'div') {
   var value = selector || ''
+  /** @type {Properties} */
   var props = {}
   var start = 0
+  /** @type {string} */
   var subvalue
+  /** @type {string} */
   var previous
+  /** @type {RegExpMatchArray} */
   var match
 
   while (start < value.length) {
@@ -19,7 +34,7 @@ export function parseSelector(selector, name = 'div') {
         name = subvalue
       } else if (previous === '#') {
         props.id = subvalue
-      } else if (props.className) {
+      } else if (Array.isArray(props.className)) {
         props.className.push(subvalue)
       } else {
         props.className = [subvalue]
