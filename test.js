@@ -1,7 +1,5 @@
-'use strict'
-
-var test = require('tape')
-var parseSelector = require('.')
+import test from 'tape'
+import {parseSelector} from './index.js'
 
 test('parseSelector()', function (t) {
   t.deepEqual(

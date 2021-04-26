@@ -1,5 +1,2 @@
 coverage/
-hast-util-parse-selector.js
-hast-util-parse-selector.min.js
-*.json
 *.md

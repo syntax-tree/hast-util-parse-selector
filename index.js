@@ -1,13 +1,8 @@
-'use strict'
-
-module.exports = parse
-
 var search = /[#.]/g
 
 // Create a hast element from a simple CSS selector.
-function parse(selector, defaultTagName) {
+export function parseSelector(selector, name = 'div') {
   var value = selector || ''
-  var name = defaultTagName || 'div'
   var props = {}
   var start = 0
   var subvalue
