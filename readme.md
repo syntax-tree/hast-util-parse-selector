@@ -50,7 +50,7 @@ Create an [*element*][element] [*node*][node] from a simple CSS selector.
 
 ###### `selector`
 
-`string`, optional — Can contain a tag-name (`foo`), classes (`.bar`),
+`string`, optional — Can contain a tag name (`foo`), classes (`.bar`),
 and an ID (`#baz`).
 Multiple classes are allowed.
 Uses the last ID if multiple IDs are found.
