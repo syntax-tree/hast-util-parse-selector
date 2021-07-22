@@ -3,7 +3,7 @@
  * @typedef {import('hast').Element} Element
  */
 
-var search = /[#.]/g
+const search = /[#.]/g
 
 /**
  * Create a hast element from a simple CSS selector.
@@ -27,21 +27,17 @@ export const parseSelector =
      * @returns {Element}
      */
     function (selector, defaultTagName = 'div') {
-      var value = selector || ''
+      const value = selector || ''
       /** @type {Properties} */
-      var props = {}
-      var start = 0
-      /** @type {string} */
-      var subvalue
-      /** @type {string} */
-      var previous
-      /** @type {RegExpMatchArray} */
-      var match
+      const props = {}
+      let start = 0
+      /** @type {string|undefined} */
+      let previous
 
       while (start < value.length) {
         search.lastIndex = start
-        match = search.exec(value)
-        subvalue = value.slice(start, match ? match.index : value.length)
+        const match = search.exec(value)
+        const subvalue = value.slice(start, match ? match.index : value.length)
 
         if (subvalue) {
           if (!previous) {

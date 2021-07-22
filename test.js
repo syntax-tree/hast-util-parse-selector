@@ -1,7 +1,7 @@
 import test from 'tape'
 import {parseSelector} from './index.js'
 
-test('parseSelector()', function (t) {
+test('parseSelector()', (t) => {
   t.deepEqual(
     parseSelector(),
     {
