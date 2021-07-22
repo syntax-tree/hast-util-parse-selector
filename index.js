@@ -17,12 +17,12 @@ const search = /[#.]/g
 export const parseSelector =
   /**
    * @type {(
-   *  <Selector extends string, DefaultTagName extends string = 'div'>(selector?: Selector, defaultTagName?: DefaultTagName) => Element & {tagName: import('./extract.js').ExtractTagName<Selector, DefaultTagName>}
+   *  <Selector extends string, DefaultTagName extends string = 'div'>(selector?: Selector|null, defaultTagName?: DefaultTagName) => Element & {tagName: import('./extract.js').ExtractTagName<Selector, DefaultTagName>}
    * )}
    */
   (
     /**
-     * @param {string} [selector]
+     * @param {string|null} [selector]
      * @param {string} [defaultTagName='div']
      * @returns {Element}
      */
