@@ -8,18 +8,39 @@
 [![Backers][backers-badge]][collective]
 [![Chat][chat-badge]][chat]
 
-[**hast**][hast] utility to create an [*element*][element] from a simple CSS
-selector.
+[hast][] utility to create an element from a simple CSS selector.
+
+## What is this?
+
+This package is a tiny utility that helps create elements.
+
+## When should I use this?
+
+This utility is super niche.
+You probably want the more powerful [`hastscript`][hastscript] or
+[`hast-util-from-selector`][hast-util-from-selector]
 
 ## Install
 
-This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
-Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
-
-[npm][]:
+This package is [ESM only][esm].
+In Node.js (version 12.20+, 14.14+, 16.0+, or 18.0+), install with [npm][]:
 
 ```sh
 npm install hast-util-parse-selector
+```
+
+In Deno with [`esm.sh`][esmsh]:
+
+```js
+import {parseSelector} from 'https://esm.sh/hast-util-parse-selector@3'
+```
+
+In browsers with [`esm.sh`][esmsh]:
+
+```html
+<script type="module">
+  import {parseSelector} from 'https://esm.sh/hast-util-parse-selector@3?bundle'
+</script>
 ```
 
 ## Use
@@ -41,28 +62,38 @@ Yields:
 
 ## API
 
-This package exports the following identifiers: `parseSelector`.
+This package exports the identifier `parseSelector`.
 There is no default export.
 
 ### `parseSelector([selector][, defaultTagName])`
 
 Create an [*element*][element] [*node*][node] from a simple CSS selector.
 
-###### `selector`
+###### Parameters
 
-`string`, optional — Can contain a tag name (`foo`), classes (`.bar`),
-and an ID (`#baz`).
-Multiple classes are allowed.
-Uses the last ID if multiple IDs are found.
-
-###### `defaultTagName`
-
-`string`, optional, defaults to `div` — Tag name to use if `selector` does not
-specify one.
+*   `selector` (`string`, optional)
+    — can contain a tag name (`foo`), classes (`.bar`), and an ID (`#baz`),
+    multiple classes are allowed, and uses the last ID if multiple IDs are found
+*   `defaultTagName` (`string`, default: `'div'`)
+    — tag name to use if `selector` does not specify one
 
 ###### Returns
 
 [`Element`][element].
+
+## Types
+
+This package is fully typed with [TypeScript][].
+It exports no additional types.
+In TypeScript 4.2+, the type system can infer the tag name of literal
+`selector`s and knows that the return element has that name.
+
+## Compatibility
+
+Projects maintained by the unified collective are compatible with all maintained
+versions of Node.js.
+As of now, that is Node.js 12.20+, 14.14+, 16.0+, and 18.0+.
+Our projects sometimes work with older versions, but this is not guaranteed.
 
 ## Security
 
@@ -70,7 +101,8 @@ Improper use of the `selector` or `defaultTagName` can open you up to a
 [cross-site scripting (XSS)][xss] attack as the value of `tagName`, when
 resolving to `script`, injects a `script` element into the syntax tree.
 
-Do not use user input in `selector` or use [`hast-util-santize`][sanitize].
+Do not use user input in `selector` or use
+[`hast-util-santize`][hast-util-sanitize].
 
 ## Related
 
@@ -79,8 +111,8 @@ Do not use user input in `selector` or use [`hast-util-santize`][sanitize].
 
 ## Contribute
 
-See [`contributing.md` in `syntax-tree/.github`][contributing] for ways to get
-started.
+See [`contributing.md`][contributing] in [`syntax-tree/.github`][health] for
+ways to get started.
 See [`support.md`][support] for ways to get help.
 
 This project has a [code of conduct][coc].
@@ -121,22 +153,34 @@ abide by its terms.
 
 [npm]: https://docs.npmjs.com/cli/install
 
+[esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+
+[esmsh]: https://esm.sh
+
+[typescript]: https://www.typescriptlang.org
+
 [license]: license
 
 [author]: https://wooorm.com
 
-[contributing]: https://github.com/syntax-tree/.github/blob/HEAD/contributing.md
+[health]: https://github.com/syntax-tree/.github
 
-[support]: https://github.com/syntax-tree/.github/blob/HEAD/support.md
+[contributing]: https://github.com/syntax-tree/.github/blob/main/contributing.md
 
-[coc]: https://github.com/syntax-tree/.github/blob/HEAD/code-of-conduct.md
+[support]: https://github.com/syntax-tree/.github/blob/main/support.md
+
+[coc]: https://github.com/syntax-tree/.github/blob/main/code-of-conduct.md
 
 [hast]: https://github.com/syntax-tree/hast
+
+[hast-util-sanitize]: https://github.com/syntax-tree/hast-util-sanitize
+
+[hastscript]: https://github.com/syntax-tree/hastscript
+
+[hast-util-from-selector]: https://github.com/syntax-tree/hast-util-from-selector
 
 [node]: https://github.com/syntax-tree/hast#nodes
 
 [element]: https://github.com/syntax-tree/hast#element
 
 [xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
-
-[sanitize]: https://github.com/syntax-tree/hast-util-sanitize

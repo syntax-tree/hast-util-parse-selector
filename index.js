@@ -8,11 +8,13 @@ const search = /[#.]/g
 /**
  * Create a hast element from a simple CSS selector.
  *
- * @param selector A simple CSS selector.
+ * @param selector
+ *   A simple CSS selector.
  *   Can contain a tag-name (`foo`), classes (`.bar`), and an ID (`#baz`).
  *   Multiple classes are allowed.
  *   Uses the last ID if multiple IDs are found.
- * @param [defaultTagName='div'] Tag name to use if `selector` does not specify one.
+ * @param [defaultTagName='div']
+ *   Tag name to use if `selector` does not specify one.
  */
 export const parseSelector =
   /**
