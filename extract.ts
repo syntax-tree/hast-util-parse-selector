@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
 export type ExtractTagName<
   SimpleSelector extends string,
   DefaultTagName extends string
@@ -16,5 +14,3 @@ export type ExtractTagName<
   : SimpleSelector extends string
   ? SimpleSelector
   : DefaultTagName
-
-/* eslint-enable @typescript-eslint/no-unused-vars */
