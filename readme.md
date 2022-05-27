@@ -10,6 +10,21 @@
 
 [hast][] utility to create an element from a simple CSS selector.
 
+## Contents
+
+*   [What is this?](#what-is-this)
+*   [When should I use this?](#when-should-i-use-this)
+*   [Install](#install)
+*   [Use](#use)
+*   [API](#api)
+    *   [`parseSelector([selector][, defaultTagName])`](#parseselectorselector-defaulttagname)
+*   [Types](#types)
+*   [Compatibility](#compatibility)
+*   [Security](#security)
+*   [Related](#related)
+*   [Contribute](#contribute)
+*   [License](#license)
+
 ## What is this?
 
 This package is a tiny utility that helps create elements.
