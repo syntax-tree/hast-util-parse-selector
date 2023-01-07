@@ -1,5 +1,5 @@
 import {expectType, expectAssignable} from 'tsd'
-import {Element} from 'hast'
+import {type Element} from 'hast'
 import {parseSelector} from './index.js'
 
 type A = Element & {tagName: 'a'}
