@@ -30,14 +30,13 @@
   "types": "index.d.ts",
   "typesVersions": {
     "<=4.1": {
-      "extract.d.ts": [
-        "extract-legacy.d.ts"
+      "lib/extract.d.ts": [
+        "lib/extract-legacy.d.ts"
       ]
     }
   },
   "files": [
-    "extract-legacy.d.ts",
-    "extract.d.ts",
+    "lib/",
     "index.d.ts",
     "index.js"
   ],
