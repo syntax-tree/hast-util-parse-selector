@@ -1,8 +1,15 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {parseSelector} from './index.js'
+import * as mod from './index.js'
 
 test('parseSelector()', () => {
+  assert.deepEqual(
+    Object.keys(mod).sort(),
+    ['parseSelector'],
+    'should expose the public api'
+  )
+
   assert.deepEqual(
     parseSelector(),
     {
