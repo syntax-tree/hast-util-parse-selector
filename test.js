@@ -1,8 +1,9 @@
-import test from 'tape'
+import assert from 'node:assert/strict'
+import test from 'node:test'
 import {parseSelector} from './index.js'
 
-test('parseSelector()', (t) => {
-  t.deepEqual(
+test('parseSelector()', () => {
+  assert.deepEqual(
     parseSelector(),
     {
       type: 'element',
@@ -13,7 +14,7 @@ test('parseSelector()', (t) => {
     'should return an empty element without selector'
   )
 
-  t.deepEqual(
+  assert.deepEqual(
     parseSelector('foo'),
     {
       type: 'element',
@@ -24,7 +25,7 @@ test('parseSelector()', (t) => {
     'should return an element with a tag-name when given a tag-name'
   )
 
-  t.deepEqual(
+  assert.deepEqual(
     parseSelector(null, 'g'),
     {
       type: 'element',
@@ -35,7 +36,7 @@ test('parseSelector()', (t) => {
     'should return an `defaultTagName` if no tag name is defined in `selector` (#1)'
   )
 
-  t.deepEqual(
+  assert.deepEqual(
     parseSelector('#id', 'g'),
     {
       type: 'element',
@@ -46,7 +47,7 @@ test('parseSelector()', (t) => {
     'should return an `defaultTagName` if no tag name is defined in `selector` (#2)'
   )
 
-  t.deepEqual(
+  assert.deepEqual(
     parseSelector('.bar'),
     {
       type: 'element',
@@ -57,7 +58,7 @@ test('parseSelector()', (t) => {
     'should return a `div` element when given a class'
   )
 
-  t.deepEqual(
+  assert.deepEqual(
     parseSelector('#bar'),
     {
       type: 'element',
@@ -68,7 +69,7 @@ test('parseSelector()', (t) => {
     'should return a `div` element when given an ID'
   )
 
-  t.deepEqual(
+  assert.deepEqual(
     parseSelector('foo#bar.baz.qux'),
     {
       type: 'element',
@@ -82,7 +83,7 @@ test('parseSelector()', (t) => {
     'should return attributes'
   )
 
-  t.deepEqual(
+  assert.deepEqual(
     parseSelector('foo#bar#baz'),
     {
       type: 'element',
@@ -93,7 +94,7 @@ test('parseSelector()', (t) => {
     'should return the last ID if multiple are found'
   )
 
-  t.deepEqual(
+  assert.deepEqual(
     parseSelector('Foo'),
     {
       type: 'element',
@@ -103,6 +104,4 @@ test('parseSelector()', (t) => {
     },
     'should *not* case the tag-name'
   )
-
-  t.end()
 })
