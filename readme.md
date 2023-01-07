@@ -17,7 +17,7 @@
 *   [Install](#install)
 *   [Use](#use)
 *   [API](#api)
-    *   [`parseSelector([selector][, defaultTagName])`](#parseselectorselector-defaulttagname)
+    *   [`parseSelector(selector?[, defaultTagName])`](#parseselectorselector-defaulttagname)
 *   [Types](#types)
 *   [Compatibility](#compatibility)
 *   [Security](#security)
@@ -38,7 +38,7 @@ You probably want the more powerful [`hastscript`][hastscript] or
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 12.20+, 14.14+, 16.0+, or 18.0+), install with [npm][]:
+In Node.js (version 14.14+ and 16.0+), install with [npm][]:
 
 ```sh
 npm install hast-util-parse-selector
@@ -77,29 +77,31 @@ Yields:
 
 ## API
 
-This package exports the identifier `parseSelector`.
+This package exports the identifier [`parseSelector`][parseselector].
 There is no default export.
 
-### `parseSelector([selector][, defaultTagName])`
+### `parseSelector(selector?[, defaultTagName])`
 
-Create an [*element*][element] [*node*][node] from a simple CSS selector.
+Create a hast element from a simple CSS selector.
 
 ###### Parameters
 
 *   `selector` (`string`, optional)
-    — can contain a tag name (`foo`), classes (`.bar`), and an ID (`#baz`),
-    multiple classes are allowed, and uses the last ID if multiple IDs are found
+    —  simple CSS selector, can contain a tag name (`foo`), classes (`.bar`),
+    and an ID (`#baz`), multiple classes are allowed, uses the last ID if
+    multiple IDs are found
 *   `defaultTagName` (`string`, default: `'div'`)
     — tag name to use if `selector` does not specify one
 
 ###### Returns
 
-[`Element`][element].
+Built element ([`Element`][element]).
 
 ## Types
 
 This package is fully typed with [TypeScript][].
 It exports no additional types.
+
 In TypeScript 4.2+, the type system can infer the tag name of literal
 `selector`s and knows that the return element has that name.
 
@@ -107,7 +109,7 @@ In TypeScript 4.2+, the type system can infer the tag name of literal
 
 Projects maintained by the unified collective are compatible with all maintained
 versions of Node.js.
-As of now, that is Node.js 12.20+, 14.14+, 16.0+, and 18.0+.
+As of now, that is Node.js 14.14+ and 16.0+.
 Our projects sometimes work with older versions, but this is not guaranteed.
 
 ## Security
@@ -194,8 +196,8 @@ abide by its terms.
 
 [hast-util-from-selector]: https://github.com/syntax-tree/hast-util-from-selector
 
-[node]: https://github.com/syntax-tree/hast#nodes
-
 [element]: https://github.com/syntax-tree/hast#element
 
 [xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
+
+[parseselector]: #parseselectorselector-defaulttagname
