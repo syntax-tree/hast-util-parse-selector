@@ -1,84 +1,88 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {parseSelector} from './index.js'
-import * as mod from './index.js'
 
-test('parseSelector()', () => {
-  assert.deepEqual(
-    Object.keys(mod).sort(),
-    ['parseSelector'],
-    'should expose the public api'
+test('parseSelector()', async function (t) {
+  await t.test('should expose the public api', async function () {
+    assert.deepEqual(Object.keys(await import('./index.js')).sort(), [
+      'parseSelector'
+    ])
+  })
+
+  await t.test(
+    'should return an empty element without selector',
+    async function () {
+      assert.deepEqual(parseSelector(), {
+        type: 'element',
+        tagName: 'div',
+        properties: {},
+        children: []
+      })
+    }
   )
 
-  assert.deepEqual(
-    parseSelector(),
-    {
-      type: 'element',
-      tagName: 'div',
-      properties: {},
-      children: []
-    },
-    'should return an empty element without selector'
+  await t.test(
+    'should return an element with a tag-name when given a tag-name',
+    async function () {
+      assert.deepEqual(parseSelector('foo'), {
+        type: 'element',
+        tagName: 'foo',
+        properties: {},
+        children: []
+      })
+    }
   )
 
-  assert.deepEqual(
-    parseSelector('foo'),
-    {
-      type: 'element',
-      tagName: 'foo',
-      properties: {},
-      children: []
-    },
-    'should return an element with a tag-name when given a tag-name'
+  await t.test(
+    'should return an `defaultTagName` if no tag name is defined in `selector` (#1)',
+    async function () {
+      assert.deepEqual(parseSelector(undefined, 'g'), {
+        type: 'element',
+        tagName: 'g',
+        properties: {},
+        children: []
+      })
+    }
   )
 
-  assert.deepEqual(
-    parseSelector(null, 'g'),
-    {
-      type: 'element',
-      tagName: 'g',
-      properties: {},
-      children: []
-    },
-    'should return an `defaultTagName` if no tag name is defined in `selector` (#1)'
+  await t.test(
+    'should return an `defaultTagName` if no tag name is defined in `selector` (#2)',
+    async function () {
+      assert.deepEqual(parseSelector('#id', 'g'), {
+        type: 'element',
+        tagName: 'g',
+        properties: {id: 'id'},
+        children: []
+      })
+    }
   )
 
-  assert.deepEqual(
-    parseSelector('#id', 'g'),
-    {
-      type: 'element',
-      tagName: 'g',
-      properties: {id: 'id'},
-      children: []
-    },
-    'should return an `defaultTagName` if no tag name is defined in `selector` (#2)'
+  await t.test(
+    'should return a `div` element when given a class',
+    async function () {
+      assert.deepEqual(parseSelector('.bar'), {
+        type: 'element',
+        tagName: 'div',
+        properties: {className: ['bar']},
+        children: []
+      })
+    }
   )
 
-  assert.deepEqual(
-    parseSelector('.bar'),
-    {
-      type: 'element',
-      tagName: 'div',
-      properties: {className: ['bar']},
-      children: []
-    },
-    'should return a `div` element when given a class'
+  await t.test(
+    'should return a `div` element when given an ID',
+    async function () {
+      assert.deepEqual(parseSelector('#bar'), {
+        type: 'element',
+        tagName: 'div',
+        properties: {id: 'bar'},
+        children: []
+      })
+    }
   )
 
-  assert.deepEqual(
-    parseSelector('#bar'),
-    {
-      type: 'element',
-      tagName: 'div',
-      properties: {id: 'bar'},
-      children: []
-    },
-    'should return a `div` element when given an ID'
-  )
-
-  assert.deepEqual(
-    parseSelector('foo#bar.baz.qux'),
-    {
+  await t.test('should return attributes', async function () {
+    assert.deepEqual(parseSelector('foo#bar.baz.qux'), {
       type: 'element',
       tagName: 'foo',
       properties: {
@@ -86,29 +90,27 @@ test('parseSelector()', () => {
         className: ['baz', 'qux']
       },
       children: []
-    },
-    'should return attributes'
+    })
+  })
+
+  await t.test(
+    'should return the last ID if multiple are found',
+    async function () {
+      assert.deepEqual(parseSelector('foo#bar#baz'), {
+        type: 'element',
+        tagName: 'foo',
+        properties: {id: 'baz'},
+        children: []
+      })
+    }
   )
 
-  assert.deepEqual(
-    parseSelector('foo#bar#baz'),
-    {
-      type: 'element',
-      tagName: 'foo',
-      properties: {id: 'baz'},
-      children: []
-    },
-    'should return the last ID if multiple are found'
-  )
-
-  assert.deepEqual(
-    parseSelector('Foo'),
-    {
+  await t.test('should *not* case the tag-name', async function () {
+    assert.deepEqual(parseSelector('Foo'), {
       type: 'element',
       tagName: 'Foo',
       properties: {},
       children: []
-    },
-    'should *not* case the tag-name'
-  )
+    })
+  })
 })
