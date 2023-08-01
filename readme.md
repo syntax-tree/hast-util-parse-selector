@@ -47,14 +47,14 @@ npm install hast-util-parse-selector
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {parseSelector} from 'https://esm.sh/hast-util-parse-selector@3'
+import {parseSelector} from 'https://esm.sh/hast-util-parse-selector@4'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {parseSelector} from 'https://esm.sh/hast-util-parse-selector@3?bundle'
+  import {parseSelector} from 'https://esm.sh/hast-util-parse-selector@4?bundle'
 </script>
 ```
 
