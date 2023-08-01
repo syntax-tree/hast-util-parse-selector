@@ -28,13 +28,6 @@
   "type": "module",
   "main": "index.js",
   "types": "index.d.ts",
-  "typesVersions": {
-    "<=4.1": {
-      "lib/extract.d.ts": [
-        "lib/extract-legacy.d.ts"
-      ]
-    }
-  },
   "files": [
     "lib/",
     "index.d.ts",
@@ -56,7 +49,7 @@
   },
   "scripts": {
     "prepack": "npm run build && npm run format",
-    "build": "tsc --build --clean && tsc --build && type-coverage",
+    "build": "tsc --build --clean && tsc --build && type-coverage && tsd",
     "format": "remark . -qfo && prettier . -w --log-level warn && xo --fix",
     "test-api": "node --conditions development test.js",
     "test-coverage": "c8 --100 --reporter lcov npm run test-api",
